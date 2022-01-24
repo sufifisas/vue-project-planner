@@ -1,15 +1,15 @@
 <template>
-  <div class="project__item" @click="showDesc = !showDesc">
+  <div class="project__item">
     <div class="project__content">
-        <p class="project__title">Project 1</p>
+        <p class="project__title" @click="showDesc = !showDesc">{{ project.title }}</p>
         <div class="project__icons">
-            <span>Edit</span>
-            <span>Delete</span>
-            <span>Complete</span>
+            <span class="material-icons">edit</span>
+            <span class="material-icons">delete</span>
+            <span class="material-icons">done</span>
         </div>
     </div>
     <div class="project__desc" v-if="showDesc">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas est cum consequuntur hic amet fugiat, suscipit veniam sunt soluta unde.</p>
+        <p>{{ project.desc }}</p>
     </div>
   </div>
 </template>
@@ -20,7 +20,8 @@ export default {
         return {
             showDesc: false
         }
-    }
+    },
+    props: ['project']
 }
 </script>
 
