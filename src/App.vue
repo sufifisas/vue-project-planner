@@ -23,7 +23,6 @@
 body {
   margin: auto;
   max-width: 600px;
-  min-height: 100vh;
 }
 h1 {
   font-size: 32px;
@@ -53,16 +52,26 @@ h1 {
   padding: 0 24px;
 }
 .project__title {
-  font-size: 24px;
+  font-size: 20px;
   margin: 0;
+  font-weight: 500;
+}
+.project__title:hover {
+  cursor: pointer;
 }
 .project__icons {
   display: flex;
 }
 .project__icons span {
   margin-right: 10px;
+  cursor: pointer;
+  color: #888888;
+}
+.project__icons span:hover {
+  color: #000000;
 }
 .project__desc {
-  padding-bottom: 24px;
+  padding: 0 24px 16px;
+  text-align: left;
 }
 </style>
