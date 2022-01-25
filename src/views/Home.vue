@@ -1,7 +1,7 @@
 <template>
   <h1 class="home__title">project planner</h1>
   <ul class="project__list">
-    <li v-for="project in projects" :key="project.id"><SingleProject :project="project" @complete="handleComplete" /></li>
+    <li v-for="project in projects" :key="project.id"><SingleProject :project="project" @delete="handleDelete" @complete="handleComplete" /></li>
   </ul>
 </template>
 
@@ -20,6 +20,11 @@ export default {
     SingleProject
   },
   methods: {
+    handleDelete(id) {
+      this.projects = this.projects.filter(project => {
+        return project.id != id
+      })
+    },
     handleComplete(id) {
       let p = this.projects.find(project => {
         return project.id === id

@@ -4,7 +4,7 @@
         <p class="project__title" @click="showDesc = !showDesc">{{ project.title }}</p>
         <div class="project__icons">
             <span class="material-icons">edit</span>
-            <span class="material-icons">delete</span>
+            <span class="material-icons" @click="deleteProject">delete</span>
             <span class="material-icons" @click="toggleComplete" :class="{ 'complete': project.complete }">done</span>
         </div>
     </div>
@@ -24,6 +24,15 @@ export default {
     },
     props: ['project'],
     methods: {
+        deleteProject() {
+            fetch(this.url, {
+                method: 'DELETE'
+            }).then(() => {
+                this.$emit('delete', this.project.id)
+            }).catch(err => {
+                console.log(err)
+            })
+        },
         toggleComplete() {
             fetch(this.url,{
                 method: 'PATCH',
