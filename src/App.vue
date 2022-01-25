@@ -80,4 +80,35 @@ h1 {
   padding: 0 24px 16px;
   text-align: left;
 }
+.project__form {
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+  padding: 24px;
+  text-align: left;
+}
+.project__form label {
+  font-size: 18px;
+  display: block;
+  font-weight: 600;
+  color: #454545;
+  margin-bottom: 10px;
+}
+.project__form button {
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: green;
+  color: #FFFFFF;
+}
+.project__form input, .project__form textarea {
+  border-bottom: 1px solid #999999;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+.project__form input:focus-visible, .project__form textarea:focus-visible {
+  outline: 0;
+}
 </style>

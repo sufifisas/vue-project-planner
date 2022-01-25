@@ -19,7 +19,7 @@ export default {
     data() {
         return {
             showDesc: false,
-            url: 'http://localhost:3000/projects/' + this.project.id
+            url: 'http://localhost:3000/projects/' + this.project.id,
         }
     },
     props: ['project'],
