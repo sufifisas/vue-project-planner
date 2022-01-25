@@ -1,16 +1,16 @@
 {
-    "projects": [
-        {
-            "id": "1",
-            "title": "Learning Vuejs",
-            "desc": "lorem ipsum",
-            "complete": "false"
-        },
-        {
-            "id": "2",
-            "title": "Learning Vuex",
-            "desc": "lorem ipsum",
-            "complete": "false"
-        }
-    ]
+  "projects": [
+    {
+      "id": 1,
+      "title": "Learning Vuejs",
+      "desc": "lorem ipsum",
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Learning Vuex",
+      "desc": "lorem ipsum",
+      "complete": false
+    }
+  ]
 }
