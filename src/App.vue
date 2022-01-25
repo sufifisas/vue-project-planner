@@ -44,6 +44,9 @@ h1 {
   margin-bottom: 24px;
   border-left: 5px solid red;
 }
+.project__item.complete {
+  border-left: 5px solid green;
+}
 .project__content {
   display: flex;
   height: 80px;
@@ -69,6 +72,9 @@ h1 {
 }
 .project__icons span:hover {
   color: #000000;
+}
+.project__icons span.complete {
+  color: green;
 }
 .project__desc {
   padding: 0 24px 16px;
