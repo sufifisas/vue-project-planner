@@ -3,7 +3,7 @@
     <div class="project__content">
         <p class="project__title" @click="showDesc = !showDesc">{{ project.title }}</p>
         <div class="project__icons">
-            <span class="material-icons">edit</span>
+            <router-link :to="{ name: 'EditProject', params: {id: project.id} }"><span class="material-icons">edit</span></router-link>
             <span class="material-icons" @click="deleteProject">delete</span>
             <span class="material-icons" @click="toggleComplete" :class="{ 'complete': project.complete }">done</span>
         </div>

@@ -105,6 +105,10 @@ h1 {
   font-weight: 600;
   background-color: green;
   color: #FFFFFF;
+  cursor: pointer;
+}
+.project__form button:hover {
+  background-color: #888888;
 }
 .project__form input, .project__form textarea {
   border-bottom: 1px solid #999999;
