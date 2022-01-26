@@ -2,11 +2,13 @@
 
 ## Project setup
 ```
+npm install -g json-server
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
 ```
+json-server -w data/db.json
 yarn serve
 ```
 
