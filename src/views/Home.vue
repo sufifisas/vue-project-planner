@@ -1,23 +1,26 @@
 <template>
+  <FilteredNavbar @filteredNav="current = $event" :current="current"/>
   <h1 class="home__title">project planner</h1>
   <ul class="project__list">
-    <li v-for="project in projects" :key="project.id"><SingleProject :project="project" @delete="handleDelete" @complete="handleComplete" /></li>
+    <li v-for="project in filteredProjects" :key="project.id"><SingleProject :project="project" @delete="handleDelete" @complete="handleComplete" /></li>
   </ul>
 </template>
 
 <script>
 // @ is an alias to /src
 import SingleProject from '@/components/SingleProject.vue'
+import FilteredNavbar from '@/components/FilteredNavbar'
 
 export default {
   name: 'Home',
   data() {
     return {
-      projects: []
+      projects: [],
+      current: 'all'
     }
   },
   components: {
-    SingleProject
+    SingleProject, FilteredNavbar
   },
   methods: {
     handleDelete(id) {
@@ -30,6 +33,21 @@ export default {
         return project.id === id
       })
       p.complete = !p.complete
+    }
+  },
+  computed: {
+    filteredProjects() {
+      if(this.current == 'ongoing') {
+        return this.projects.filter(project => {
+          return !project.complete
+        })
+      }
+      else if(this.current == 'completed') {
+        return this.projects.filter(project => {
+          return project.complete
+        })
+      }
+      return this.projects
     }
   },
   mounted() {
